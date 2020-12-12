@@ -49,7 +49,7 @@ namespace WcfServiceCRUD
             con.Open();
             SqlCommand cmd = new SqlCommand("Select * from UserTab", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("mytab");
             da.Fill(dt);
             g.usertab = dt;
             return g;
