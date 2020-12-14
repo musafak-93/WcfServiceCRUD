@@ -10,12 +10,12 @@ using System.Text;
 namespace WcfServiceCRUD
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
-    [ServiceContract]
+    [ServiceContract] // Service contract merupakan bagian dari contract pada WCF
     public interface IService1
     {
 
-        [OperationContract]
-        string Insert(InsertUser user);
+        [OperationContract] // Utk mendefinisikan method ke dalam service  contract pada WCF
+        string Insert(InsertUser user); //methode
 
         [OperationContract]
         gettestdata GetInfo();
@@ -28,15 +28,15 @@ namespace WcfServiceCRUD
 
     }
 
-    [DataContract]
+    [DataContract] // Utk mendefinisikan class ke dalam service contract pada WCF
     public class DeleteUser
     {
         int uid;
-        [DataMember]
-        public int UID
+        [DataMember] // Untuk mendefinisikan properties ke dalam service contract pada WCF
+        public int UID //Properties
         {
-            get { return uid; }
-            set { uid = value; }
+            get { return uid; } //Mendapatkan nilai propertie
+            set { uid = value; } //Mengisi nilai properti
         }
     }
     [DataContract]
@@ -57,18 +57,6 @@ namespace WcfServiceCRUD
     {
         string name = string.Empty;
         string email = string.Empty;
-        //bool boolValue = true;
-        //string stringValue = "Hello ";
-
-
-        
-
-        /*[DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }*/
 
         
         [DataMember] //merupakan sebuah implementasi kode untuk mendefinisikan properties ke dalam service contract pada WCF

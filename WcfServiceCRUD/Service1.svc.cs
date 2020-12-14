@@ -18,16 +18,16 @@ namespace WcfServiceCRUD
         {
             return string.Format("You entered: {0}", value);
         }
-        public string Insert(InsertUser user)
+        public string Insert(InsertUser user) //method
         {
             string msg;
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-5L26KM2;Initial Catalog=MyTestDB;Persist Security Info=True;User ID=sa; Password=musafak93");
-            con.Open();
-                SqlCommand cmd = new SqlCommand("Insert into UserTab (Name, Email) values(@Name, @Email)", con);
-            cmd.Parameters.AddWithValue("@Name", user.Name);
-            cmd.Parameters.AddWithValue("@Email", user.Email);
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-5L26KM2;Initial Catalog=MyTestDB;Persist Security Info=True;User ID=sa; Password=musafak93"); //connect ke database
+            con.Open(); // membuka koneksi
+                SqlCommand cmd = new SqlCommand("Insert into UserTab (Name, Email) values(@Name, @Email)", con); //declare query
+            cmd.Parameters.AddWithValue("@Name", user.Name); //colum yang mau di insert data
+            cmd.Parameters.AddWithValue("@Email", user.Email); 
 
-            int g = cmd.ExecuteNonQuery();
+            int g = cmd.ExecuteNonQuery(); //menampilkan data query
             if(g==1)
             {
                 msg = "Successfuly Inserted";
