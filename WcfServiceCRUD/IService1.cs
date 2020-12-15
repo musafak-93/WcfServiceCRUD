@@ -13,6 +13,11 @@ namespace WcfServiceCRUD
     [ServiceContract] // Service contract merupakan bagian dari contract pada WCF
     public interface IService1
     {
+        //Web service adalah aplikasi sekumpulan data (database), perangkat lunak (software)
+        //atau bagian dari perangkat lunak yang dapat diakses secara remote oleh berbagai piranti
+        //dengan sebuah perantara tertentu.
+        //Web client adalah komputer yang tergabung dalam jaringan atau internet yang meminta informasi.
+        //Web server adalah komputer yang tergabung dalam jaringan atau internet yang memberikan informasi.
 
         [OperationContract] // Utk mendefinisikan method ke dalam service  contract pada WCF
         string Insert(InsertUser user); //methode
